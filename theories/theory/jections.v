@@ -251,7 +251,7 @@ Proof.
   destruct a as [a p], b as [b q].
   destruct q.
   exact (trunc_equiv' _ (Fibrations.hfiber_ap p)).
-Defined. About isequiv_ap.
+Defined.
 
 Instance embedding_apequiv_alt {A B} (f : A -> B) : IsEmbedding f -> IsApEquiv f.
 Proof.
