@@ -268,7 +268,7 @@ Instance apequiv_compose {A B C} (f:A->B) (g:B->C) `{!IsApEquiv f} `{!IsApEquiv 
 Proof.
   intros x y.
   apply (isequiv_homotopic (compose (@ap _ _ g (f x) (f y)) (@ap _ _ f x y))).
-  intros p. Symmetry;apply (ap_compose f g).
+  intros p. symmetry;apply (ap_compose f g).
 Defined.
 
 Instance equiv_apequiv {A B} (f : A -> B) `{!IsEquiv f} : IsApEquiv f := isequiv_ap.
