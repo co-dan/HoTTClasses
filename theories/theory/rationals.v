@@ -549,7 +549,7 @@ destruct (le_or_lt (enumerator Q n) 0) as [E|E].
 Defined.
 
 Lemma Qpos_is_enumerator :
-  TrM.IsConnMap@{Uhuge Ularge UQ UQ Ularge} (trunc_S minus_two) Qpos_enumerator.
+  IsSurjection Qpos_enumerator.
 Proof.
 apply BuildIsSurjection.
 unfold hfiber.
@@ -563,7 +563,7 @@ Qed.
 
 Global Instance Qpos_enumerable `{Enumerable Q} : Enumerable Q+.
 Proof.
-exists Qpos_enumerator. apply Qpos_is_enumerator@{Uhuge Ularge}.
+exists Qpos_enumerator. apply Qpos_is_enumerator.
 Qed.
 
 End enumerable.

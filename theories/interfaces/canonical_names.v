@@ -335,10 +335,9 @@ Class Return (M : Type -> Type) := ret : forall {A}, A -> M A.
 
 Class Bind (M : Type -> Type) := bind : forall {A B}, M A -> (A -> M B) -> M B.
 
-Class Enumerable@{i} (A : Type@{i}) :=
+Class Enumerable (A : Type) :=
   { enumerator : nat -> A
-  ; enumerator_issurj :>
-    TrM.IsConnMap@{Uhuge Ularge i i Ularge} (trunc_S minus_two) enumerator }.
+  ; enumerator_issurj :> IsSurjection enumerator }.
 Arguments enumerator A {_} _.
 Arguments enumerator_issurj A {_} _.
 
